@@ -4,15 +4,18 @@ const port = 3000
 
 const ClientDir =__dirname + "\\Client\\"
 
-app.get('/', (req, res) => res.sendfile(ClientDir + "index.html"))
-app.get('/teknik', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.sendFile(ClientDir + "index.html"))
 
 app.get('/', (req, res) => {
-  res.send(ClientDir + "style.css")
+  res.sendFile(ClientDir + "style.css")
 })
 app.get('/', (req, res) => {
-  res.send('zombie.png')
+  res.sendFile(ClientDir + "zombie.png")
 })
+
+app.get('/teknik', (req, res) => res.send('Hello World!'))
+
+app
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
