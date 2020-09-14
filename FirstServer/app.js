@@ -16,9 +16,9 @@ app.get('/h', (req, res) => {
   res.sendFile(ClientDir + "zombie.png")
 })
 
-app.get('/', (req, res) => res.send('Hello World!'))
-
-app
-
+app.post('/', function (req, res) {
+  res.send('POST request to the homepage')
+  console.log()
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
