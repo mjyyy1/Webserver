@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-
-
+app.use(express.json())
+app.use(express.urlencoded())
 
 const ClientDir =__dirname + "\\Client\\"
 
@@ -17,8 +17,8 @@ app.get('/h', (req, res) => {
 })
 
 app.post('/', function (req, res) {
-  res.send('POST request to the homepage')
-  console.log()
+  console.log(req.body.name)
+  console.log(req.body.email)
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
