@@ -2,18 +2,21 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+
+
+
 const ClientDir =__dirname + "\\Client\\"
 
 app.get('/', (req, res) => res.sendFile(ClientDir + "index.html"))
 
-app.get('/a', (req, res) => {
+app.get('/MainStyle', (req, res) => {
   res.sendFile(ClientDir + "style.css")
 })
 app.get('/h', (req, res) => {
   res.sendFile(ClientDir + "zombie.png")
 })
 
-app.get('/teknik', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello World!'))
 
 app
 
