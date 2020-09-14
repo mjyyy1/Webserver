@@ -6,10 +6,10 @@ const ClientDir =__dirname + "\\Client\\"
 
 app.get('/', (req, res) => res.sendFile(ClientDir + "index.html"))
 
-app.get('/', (req, res) => {
+app.get('/a', (req, res) => {
   res.sendFile(ClientDir + "style.css")
 })
-app.get('/', (req, res) => {
+app.get('/h', (req, res) => {
   res.sendFile(ClientDir + "zombie.png")
 })
 
