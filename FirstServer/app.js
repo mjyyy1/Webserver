@@ -10,6 +10,14 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 });
 
+const personSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+});
+
+const Person = mongoose.model('Person', personSchema);
+
+
 app.use(express.json())
 app.use(express.urlencoded())
 

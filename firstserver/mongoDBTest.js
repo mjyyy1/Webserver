@@ -22,6 +22,7 @@ const personSchema = new mongoose.Schema({
   };
   
   const Person = mongoose.model('Person', personSchema);
+  
 
   const malte = new Person({ name: 'Malte', age: 17 });
   const niklas = new Person({ name: 'Niklas', age: 17 });
