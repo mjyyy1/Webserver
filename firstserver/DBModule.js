@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+
+
 mongoose.connect('mongodb://localhost/webshop', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
@@ -7,22 +9,10 @@ db.once('open', function () {
     // we're connected!
 });
 
-const personSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  age: Number
-});
 
-const Person = mongoose.model('Person', personSchema);
+exports.store = (element) => {// => är samma som function
+   element.save(()=>{
+     console.log("successfully saved element in database")
+   })
 
-exports.storePerson = (name, email, age) => {
-    var person = new Person({
-        name: name, 
-        email: email, 
-        age: age 
-       })
-   
-     person.save(()=>{
-       console.log("Successfully saved person in database!")
-     })
 }

@@ -1,5 +1,6 @@
 const dBModule = require('./DBModule.js')
 const express = require('express')
+const personModel = require('./PersonModel.js')
 const app = express()
 const port = 3000
 
@@ -19,7 +20,8 @@ app.get('/h', (req, res) => {
 })
 
 app.post('/', function (req, res) {
-  dBModule.storePerson(req.body.name,req.body.email,req.body.age)
+  let person = personModel.createPerson(req.body.name,req.body.email,req.body.age)  
+  dBModule.store(person)
 })
 
 app.listen(port, () =>{ console.log(`Example app listening on port ${port}!`)
