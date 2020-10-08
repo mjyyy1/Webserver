@@ -10,14 +10,7 @@ app.use(express.urlencoded())
 
 const ClientDir =__dirname + "\\Client\\"
 
-app.get('/', (req, res) => res.sendFile(ClientDir + "index.html"))
-
-app.get('/MainStyle', (req, res) => {
-  res.sendFile(ClientDir + "style.css")
-})
-app.get('/h', (req, res) => {
-  res.sendFile(ClientDir + "zombie.png")
-})
+app.use(express.static(ClientDir))
 
 app.post('/', function (req, res) {
   let person = personModel.createPerson(req.body.name,req.body.email,req.body.age)  
