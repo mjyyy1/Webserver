@@ -15,7 +15,7 @@ app.use(express.urlencoded())
 app.get('/',(req,res) => {
   res.render('pages/index.ejs',{name:""})
 })
-
+ 
 
 
 
