@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "FirstServer/",
+			"problemMatcher": [],
+			"label": "npm: install - FirstServer",
+			"detail": "install dependencies from package"
+		}
+	]
+}
