@@ -22,7 +22,7 @@ app.get('/',(req,res) => {
 
 
 
-app.use(express.static(ClientDir))
+  app.use(express.static(ClientDir))
 
 app.post('/', function (req, res) {
   let person = personModel.createPerson(req.body.name,req.body.email,req.body.age)  
